@@ -1,0 +1,117 @@
+/* Navbar container */
+.navbar {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  color: #fff;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  z-index: 1000;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Inner container for spacing */
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 50px;
+}
+
+/* Logo */
+.navbar .logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.navbar .logo:hover {
+  color: #00c6ff;
+}
+
+/* Desktop links */
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 40px;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+/* Hover underline animation */
+.nav-links li a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: -5px;
+  left: 0;
+  background-color: #00c6ff;
+  transition: 0.3s;
+}
+
+.nav-links li a:hover::after,
+.nav-links li a.active::after {
+  width: 100%;
+}
+
+/* Hamburger menu for mobile */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #fff;
+  transition: 0.3s;
+}
+
+/* Mobile menu */
+.mobile-menu {
+  display: none;
+  flex-direction: column;
+  background: linear-gradient(135deg, #1f1c2c, #928dab);
+  position: absolute;
+  top: 70px;
+  width: 100%;
+  left: 0;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.mobile-menu.open {
+  display: flex;
+}
+
+.mobile-menu li {
+  margin: 15px 0;
+}
+
+.mobile-menu li a {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+  .hamburger {
+    display: flex;
+  }
+}

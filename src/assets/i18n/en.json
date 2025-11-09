@@ -1,0 +1,47 @@
+{
+  "NAV": {
+    "HOME": "Home",
+    "ABOUT": "About Me",
+    "PROJECTS": "Projects",
+    "CONTACT": "Contact"
+  },
+  "ABOUT": {
+    "EDUCATION": "Education",
+    "EXPERIENCE": "Experience",
+    "SKILLS": "Skills",
+    "LANGUAGES": "Languages",
+    "EDUCATION_LIST": [
+      {
+        "DEGREE": "Master's in Computer Engineering - Cybersecurity & Cloud",
+        "SCHOOL": "Politecnico di Bari",
+        "DATES": "31/08/2024 - Current",
+        "LOCATION": "Bari, Italy"
+      },
+      {
+        "DEGREE": "Bachelor's in Computer Science",
+        "SCHOOL": "El Manar University of Tunis",
+        "DATES": "31/08/2021 - 30/04/2024",
+        "LOCATION": "Tunis, Tunisia"
+      },
+      {
+        "DEGREE": "High School Diploma in Economics & Commerce",
+        "SCHOOL": "Hay Riadh Bouficha High School",
+        "DATES": "01/09/2020 - 01/06/2021",
+        "LOCATION": "Sousse, Tunisia"
+      }
+    ],
+    "EXPERIENCE_LIST": [
+      {
+        "ROLE": "English Teacher",
+        "COMPANY": "PNRR FUTURA",
+        "DATES": "01/11/2024 - 01/05/2025",
+        "LOCATION": "Bari, Italy",
+        "DETAILS": [
+          "Delivered engaging English lessons for teachers and students.",
+          "Taught levels A2, B1, B2, Starters and Movers programs.",
+          "Adapted lessons to different age groups."
+        ]
+      }
+    ]
+  }
+}
