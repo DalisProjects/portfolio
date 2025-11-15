@@ -1,0 +1,22 @@
+.app-wrapper {
+  background: linear-gradient(135deg, #19199c6b, #29294467);
+}
+.video-container {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+}
+
+.bg-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.video-overlay {
+  position: fixed;
+  inset: 0;
+  background: linear-gradient(135deg, #18186370, #29294452);
+  z-index: -1;
+  pointer-events: none;
+}

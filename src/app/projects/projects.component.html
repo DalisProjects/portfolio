@@ -1,0 +1,46 @@
+<section id="projects" class="projects-section">
+  <h2>My Projects</h2>
+
+  <div class="projects-grid">
+    <div class="project-card" *ngFor="let project of projects">
+      <h3>{{project.title}}</h3>
+      <p>{{project.shortDescription}}</p>
+
+      <!-- Tech Stack Icons -->
+      <div class="tech-logos">
+        <span *ngFor="let tech of project.techStack" title="{{tech.name}}">
+          <i [class]="tech.icon"></i>
+        </span>
+      </div>
+
+      <button class="btn-view" (click)="openModal(project)">View Project</button>
+    </div>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" *ngIf="selectedProject">
+    <div class="modal-content">
+      <span class="close" (click)="closeModal()">&times;</span>
+
+      <h2>{{selectedProject.title}}</h2>
+
+      <p><strong>Project Type:</strong> {{selectedProject.type}}</p>
+      <p><strong>Role:</strong> {{selectedProject.role}}</p>
+
+      <div class="tech-names">
+        <strong>Tech Used:</strong>
+        <span *ngFor="let tech of selectedProject.techStack">
+          {{tech.name}}
+        </span>
+      </div>
+
+      <p class="full-description">{{selectedProject.fullDescription}}</p>
+
+      <div class="project-links">
+        <a *ngIf="selectedProject.link" [href]="selectedProject.link" target="_blank">Live Website</a>
+        <a *ngIf="selectedProject.github" [href]="selectedProject.github" target="_blank">GitHub</a>
+      </div>
+
+    </div>
+  </div>
+</section>

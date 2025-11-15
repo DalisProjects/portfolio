@@ -1,0 +1,119 @@
+.home-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 98.6vh;
+  position: relative;
+  overflow: hidden;
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.popup-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.home-content {
+  max-width: 900px;
+  animation: fadeInUp 1s ease forwards;
+}
+
+/* Name */
+.home-content h1 {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+.home-content h2 {
+  font-size: 1.5rem;
+  font-weight: 50;
+}
+
+/* Roles typing */
+.typed-text {
+  display: inline; /* or inline-block */
+  font-size: 1.4rem;
+  font-weight: 100;
+  color: #ffffff;
+  position: relative;
+  margin-bottom: 20px;
+}
+.typed-text::after {
+  content: '|';
+  color: black;
+  position: absolute;
+  right: -15px;
+  animation: blink 0.7s infinite;
+}
+
+/* Buttons */
+.home-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.home-buttons .btn {
+  padding: 14px 28px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #639cd9, #00c6ff);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #79aee8, #00c6ff);
+}
+
+.home-buttons .btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.social-icons a {
+  color: #ffffff;
+  transition: transform 0.5s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.4) rotate(15deg);
+  color: #62ffed;
+}
+@keyframes blink {
+  0%, 50%, 100% { opacity: 1; }
+  25%, 75% { opacity: 0; }
+}
+/* Animations */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(50px);}
+  100% { opacity: 1; transform: translateY(0);}
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .home-content h1 { font-size: 2.2rem; }
+  .typed-text { font-size: 1.4rem; }
+  .home-buttons .btn { padding: 10px 20px; }
+}

@@ -1,0 +1,57 @@
+.cv-container {
+  padding-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 93.2vh;
+  text-align: center;
+  padding: 50px;
+}
+
+iframe {
+  width: 90%;
+  height: 80vh;
+  border-radius: 10px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  background: #fff;
+}
+
+.cv-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.cv-buttons .btn {
+  padding: 12px 24px;
+  font-weight: 600;
+  border-radius: 50px;
+  text-decoration: none;
+  color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, #639cd9, #00c6ff);
+}
+
+.btn-secondary {
+  background: linear-gradient(135deg, #79aee8, #00c6ff);
+}
+
+.cv-buttons .btn:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+iframe {
+  opacity: 0;
+  animation: fadeIn 0.8s ease forwards;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
