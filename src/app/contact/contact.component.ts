@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import emailjs from 'emailjs-com';
+import { NgForm } from '@angular/forms';
 
 @Component({
   selector: 'app-contact',
@@ -6,7 +8,34 @@ import { Component } from '@angular/core';
   styleUrls: ['./contact.component.css']
 })
 export class ContactComponent {
-  submitForm() {
-    alert('Form submitted! (Here you would integrate email service)');
+
+  showPopup = false;
+
+  submitForm(form: NgForm) {
+    if (form.invalid) return;
+
+    const userID = 'mkHHIC3IJT3dsxXmc';
+
+    const params = {
+      name: form.value.name,
+      email: form.value.email,
+      title: form.value.subject,
+      message: form.value.message
+    };
+
+    // Send email to YOU
+    emailjs.send(
+      'service_d71bela',
+      'template_jzk72qa',
+      params,
+      userID
+    );
+
+    this.showPopup = true;
+    form.reset();
+  }
+
+  closePopup() {
+    this.showPopup = false;
   }
 }

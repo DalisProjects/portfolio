@@ -1,42 +1,154 @@
+/* CONTACT SECTION */
 .contact-section {
   padding: 5rem 2rem;
-  background-color: #1a1a1a;
-  color: white;
   text-align: center;
 }
 
 .contact-section h2 {
+  font-family: 'Trebuchet MS', sans-serif;
+  color: #ffffff;
+  font-weight: 300;
   font-size: 2.5rem;
-  margin-bottom: 2rem;
 }
 
-.contact-section form {
-  max-width: 500px;
+/* FORM */
+.contact-form {
+  max-width: 550px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
+  padding: 0 100px;
+  border-radius: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
 
-.contact-section input,
-.contact-section textarea {
-  padding: 0.8rem;
-  border-radius: 5px;
-  border: none;
-  font-size: 1rem;
+.form-group {
+  margin-bottom: 0.5rem;
+  text-align: left;
 }
 
-.contact-section button {
+label {
+  font-weight: 200;
+  color: #ffffff;
+}
+
+input, textarea {
+  width: 100%;
   padding: 0.8rem;
-  border: none;
-  border-radius: 5px;
-  background-color: #00bcd4;
-  color: white;
+  background-color: transparent;
+  color: #ffffff;
+  margin-top: 0.3rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
   font-size: 1rem;
+  outline: none;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #f5f5f5;
+}
+
+.btn-submit {
+  margin-top: 1rem;
+  background: #e8d9ff4b;
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border: none;
+  border-radius: 8px;
   cursor: pointer;
-  transition: background-color 0.3s;
+  font-size: 1.1rem;
+  transition: 0.3s;
 }
 
-.contact-section button:hover {
-  background-color: #0097a7;
+.btn-submit:hover {
+  background: #55c9f7a8;
+}
+
+/* POPUP */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.07);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.popup-box {
+  background: transparent;
+  width: 90%;
+  max-width: 500px;
+  padding: 2rem;
+  display: flex;
+  gap: 1.5rem;
+  border-radius: 15px;
+  animation: popupFade 0.3s ease;
+}
+
+.popup-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.popup-content{
+  background-color: rgba(85, 255, 255, 0.822);
+  color: white;
+  border-radius: 10%;
+  box-shadow: inset;
+}
+.popup-content h3 {
+  margin: 0;
+}
+
+.btn-home {
+  margin-top: 1rem;
+  background: #199cc7;
+  color: #fff;
+  border: none;
+  padding: 0.7rem 1.5rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.btn-home:hover {
+  background: #5e1dd4;
+}
+
+/* ANIMATION */
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: scale(1); }
+}
+.error {
+  color: #ff6b6b;
+  font-size: 0.9rem;
+  margin-bottom: 8px;
+}
+input.ng-invalid.ng-touched,
+textarea.ng-invalid.ng-touched {
+  border: 1px solid #ff6b6b;
+}
+/* Social Icons */
+.social-icons {
+  padding-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  color: #ffffff;
+  font-size: 1.1rem;
+}
+
+.social-icons a {
+  color: #ffffff;
+  transition: transform 0.5s ease, color 0.3s ease;
+}
+
+.social-icons a:hover {
+  transform: scale(1.4) rotate(15deg);
+  color: #62ffed;
 }

@@ -1,0 +1,6 @@
+.app-wrapper {
+  background: linear-gradient(135deg, #18186370, #29294452);
+  min-height: 100vh;
+  position: relative;
+  z-index: 0;
+}

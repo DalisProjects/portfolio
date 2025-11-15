@@ -1,9 +1,12 @@
 .footer {
-  background: linear-gradient(135deg, #8884a293, #ffffff62);
-  color: #fff;
-  text-align: center;
-  padding-top: 0.2rem;
-  padding-bottom: 0.01px;
   width: 100%;
-  opacity: 50%;
+  height: 5px;              /* thin, but not microscopic */
+  padding: 0;                /* no weird rounding issues */
+  margin: 0;
+  display: flex;
+  align-items: center;       /* vertically centers the text */
+  justify-content: center;   /* horizontal centering */
+  font-size: 0.75rem;        /* small but readable */
+  color: #fff;
+  background: transparent;   /* so your video still shows */
 }

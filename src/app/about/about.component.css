@@ -1,8 +1,6 @@
 .about-section {
-  margin-top: 50px;
   min-height: 100vh;
-  padding: 80px 5%;
-  background: linear-gradient(135deg, #1e1e2f, #292944);
+  padding: 5rem 2rem;
   color: #fff;
   animation: fadeIn 1.5s ease-in;
 }
@@ -13,7 +11,12 @@
   margin-bottom: 30px;
   position: relative;
 }
-
+h2 {
+  font-family: 'Trebuchet MS', sans-serif;
+  color: #ffffff;
+  font-weight: 300;
+  font-size: 2.5rem;
+}
 .title::after {
   content: "";
   display: block;

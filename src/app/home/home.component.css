@@ -4,33 +4,19 @@
   align-items: center;
   text-align: center;
   height: 93.2vh;
-  background: linear-gradient(135deg, #1f1c2c00, #928dab12);
-  color: #1d1544cd;
   position: relative;
   overflow: hidden;
   flex-direction: column;
+  color: #ffffff;
 }
-#bg-video {
-  position: fixed;      /* stays in the background */
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 100vh;
-  object-fit: cover;    /* covers entire screen without stretching */
-  z-index: -1;          /* behind all other content */
-  pointer-events: none; /* prevents clicking the video by accident */
-}
-.bg-video {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+
+.popup-img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
   object-fit: cover;
-  z-index: -1;
-  opacity: 0.85;
-  filter: brightness(75%);
 }
+
 .home-content {
   max-width: 900px;
   animation: fadeInUp 1s ease forwards;
@@ -101,6 +87,7 @@
   display: flex;
   justify-content: center;
   gap: 30px;
+  color: #ffffff;
   font-size: 1.1rem;
 }
 
