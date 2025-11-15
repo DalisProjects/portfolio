@@ -4,9 +4,9 @@
   width: 100%;
   top: 0;
   left: 0;
-  background: linear-gradient(135deg, #1f1c2c6e, #928dab41);
+  background-color: #7c66dd11;
   color: #fff;
-  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0);
   z-index: 1000;
   font-family: 'Poppins', sans-serif;
 }

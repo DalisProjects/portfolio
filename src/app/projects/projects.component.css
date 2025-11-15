@@ -52,6 +52,9 @@ h2 {
   background: rgba(0,0,0,0.55);
   z-index: 2000;
 }
+.modal-content h2{
+  color: #7b2ff7;
+}
 
 .modal-content {
   background: rgba(255, 255, 255, 0.74);

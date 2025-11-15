@@ -1,9 +1,15 @@
-<video autoplay muted loop playsinline class="bg-video" id="bg-video"
-       [src]="'assets/bg.mp4'"></video>
+<div class="app-wrapper">
+  <video autoplay muted loop playsinline class="bg-video" id="bg-video">
+  <source src="assets/bg.webm" type="video/webm" />
+  <source src="assets/bg.mp4" type="video/mp4" />
+</video>
 
-<div class="app-wrapper"><app-navbar></app-navbar>
+
+<app-navbar></app-navbar>
+
 
   <router-outlet></router-outlet>
 
-<app-footbar></app-footbar>
 
+<app-footbar></app-footbar>
+</div>
