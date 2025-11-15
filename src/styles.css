@@ -1,4 +1,38 @@
 /* You can add global styles to this file, and also import other style files */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+    
+     height: 100%; }
+/* Apply the font to all regular text */
+body,
+p,
+span,
+li,
+small,
+em,
+strong,
+label {
+  font-family: 'Inter', sans-serif;
+  font-weight: 300;
+}
+
+/* Keep titles untouched */
+h1, h2, h3, h4, h5, h6 {
+  font-family: inherit;
+}
+.bg-video {
+    
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  
+  object-fit: cover;
+  z-index: -1; /* behind everything */
+  pointer-events: none;
+}
+.app-wrapper {
+  position: relative;
+  z-index: 1;
+}
