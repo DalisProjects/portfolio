@@ -8,6 +8,13 @@ import { Component } from '@angular/core';
 export class AboutComponent {
   workExperience = [
     {
+      title: 'Junior HCM Technical Consultant',
+      company: 'Talentia Software S.r.l.',
+      location: 'Bari, Italy',
+      period: 'Sep 2026 – Present',
+      description: ' '
+    },
+    {
       title: 'English Teacher - PNRR FUTURA',
       company: 'PNRR Schools Project (Corato, Monopoli, Molfetta)',
       location: 'Bari, Italy',
