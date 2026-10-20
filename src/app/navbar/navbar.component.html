@@ -1,14 +1,80 @@
 <nav class="navbar">
   <div class="navbar-container">
     
-    <a class="logo" routerLink="/home">Dali</a>
+    <!-- LOGO -->
+    <a class="logo" routerLink="/home" (click)="trackClick('home')">Dali</a>
 
+    <!-- DESKTOP NAV -->
     <ul class="nav-links">
-  <li><a routerLink="/home" routerLinkActive="active">Home</a></li>
-  <li><a routerLink="/about" routerLinkActive="active">About Me</a></li>
-  <li><a routerLink="/projects" routerLinkActive="active">Projects</a></li>
-  <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
-</ul>
+      <li>
+        <a routerLink="/home" routerLinkActive="active" 
+           (click)="trackClick('home')">Home</a>
+      </li>
+
+      <li>
+        <a routerLink="/about" routerLinkActive="active"
+           (click)="trackClick('about')">About Me</a>
+      </li>
+
+      <li>
+        <a routerLink="/projects" routerLinkActive="active"
+           (click)="trackClick('projects')">Projects</a>
+      </li>
+
+      <li>
+        <a routerLink="/reviewspage" routerLinkActive="active"
+           (click)="trackClick('reviews')">Reviews</a>
+      </li>
+
+      <li>
+        <a routerLink="/contact" routerLinkActive="active"
+           (click)="trackClick('contact')">Contact</a>
+      </li>
+
+      <li>
+        <a routerLink="/cv" routerLinkActive="active"
+           (click)="trackClick('cv')">CV</a>
+      </li>
+
+
+      <!-- ⭐ ADMIN ONLY: ANALYTICS DASHBOARD -->
+      <li >
+        <a routerLink="/analytics-dashboard" routerLinkActive="active">
+          Analytics
+        </a>
+      </li>
+
+      <!-- VIEW COUNTER -->
+      <li>
+        <div class="view-counter" title="Unique daily visitors">
+          👁
+          <span *ngIf="loadingViews">...</span>
+          <span *ngIf="!loadingViews">{{ views | number }}</span>
+        </div>
+      </li>
+
+      <!-- ADMIN BUTTONS (DESKTOP) -->
+      <li>
+        <button 
+          class="admin-icon-btn" 
+          *ngIf="!isAdmin" 
+          (click)="enableAdmin()" 
+          title="Administrative login: Only for Dali">
+          <i class="fa-solid fa-key"></i>
+        </button>
+
+        <button 
+          class="admin-icon-btn admin-logout" 
+          *ngIf="isAdmin" 
+          (click)="disableAdmin()" 
+          title="Admin Logout">
+          <i class="fa-solid fa-unlock-keyhole"></i>
+        </button>
+      </li>
+
+    </ul>
+
+    <!-- HAMBURGER -->
     <div class="hamburger" (click)="toggleMenu()">
       <span></span>
       <span></span>
@@ -16,11 +82,76 @@
     </div>
   </div>
 
-  <!-- Mobile menu -->
+  <!-- MOBILE MENU -->
   <ul class="mobile-menu" [class.open]="menuOpen">
-    <li><a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a></li>
-    <li><a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About Me</a></li>
-    <li><a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Projects</a></li>
-    <li><a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a></li>
+
+    <li>
+      <a routerLink="/home" routerLinkActive="active" 
+         (click)="trackClick('home'); closeMenu()">Home</a>
+    </li>
+
+    <li>
+      <a routerLink="/about" routerLinkActive="active"
+         (click)="trackClick('about'); closeMenu()">About Me</a>
+    </li>
+
+    <li>
+      <a routerLink="/projects" routerLinkActive="active"
+         (click)="trackClick('projects'); closeMenu()">Projects</a>
+    </li>
+
+    <li>
+      <a routerLink="/reviewspage" routerLinkActive="active"
+         (click)="trackClick('reviews'); closeMenu()">Reviews</a>
+    </li>
+
+    <li>
+      <a routerLink="/contact" routerLinkActive="active"
+         (click)="trackClick('contact'); closeMenu()">Contact</a>
+    </li>
+
+    <li>
+      <a routerLink="/cv" routerLinkActive="active"
+         (click)="trackClick('cv'); closeMenu()">CV</a>
+    </li>
+
+    <!-- ⭐ ADMIN ONLY: ANALYTICS DASHBOARD -->
+    <li >
+      <a routerLink="/analytics-dashboard" 
+         routerLinkActive="active"
+         (click)="closeMenu()">
+        Analytics
+      </a>
+    </li>
+
+    <!-- VIEW COUNTER MOBILE -->
+    <li>
+      <div class="view-counter" title="Unique daily visitors">
+        👁 
+        <span *ngIf="loadingViews">...</span>
+        <span *ngIf="!loadingViews">{{ views | number }}</span>
+      </div>
+    </li>
+
+    <!-- ADMIN (MOBILE) -->
+    <li>
+      <button 
+        class="admin-icon-btn" 
+        *ngIf="!isAdmin" 
+        (click)="enableAdmin()" 
+        title="Admin login">
+        <i class="fa-solid fa-key"></i>
+      </button>
+
+      <button 
+        class="admin-icon-btn admin-logout" 
+        *ngIf="isAdmin" 
+        (click)="disableAdmin()" 
+        title="Admin Logout">
+        <i class="fa-solid fa-unlock-keyhole"></i>
+      </button>
+    </li>
+
   </ul>
+
 </nav>

@@ -1,6 +1,6 @@
 /* CONTACT SECTION */
 .contact-section {
-  padding: 5rem 2rem;
+  padding: auto;
   text-align: center;
 }
 
@@ -13,9 +13,9 @@
 
 /* FORM */
 .contact-form {
-  max-width: 550px;
+  max-width: 50%;
   margin: 0 auto;
-  padding: 0 100px;
+  padding: auto;
   border-radius: 20px;
   box-shadow: 0 5px 15px rgba(0,0,0,0.1);
 }
@@ -32,7 +32,7 @@ label {
 
 input, textarea {
   width: 100%;
-  padding: 0.8rem;
+  padding: 1.5rem;
   background-color: transparent;
   color: #ffffff;
   margin-top: 0.3rem;
@@ -49,7 +49,7 @@ textarea:focus {
 
 .btn-submit {
   margin-top: 1rem;
-  background: #e8d9ff4b;
+  background: #47a8f8e5;
   color: #fff;
   padding: 0.8rem 2rem;
   border: none;
@@ -60,7 +60,7 @@ textarea:focus {
 }
 
 .btn-submit:hover {
-  background: #55c9f7a8;
+  background: #4aeaffe8;
 }
 
 /* POPUP */
@@ -151,4 +151,10 @@ textarea.ng-invalid.ng-touched {
 .social-icons a:hover {
   transform: scale(1.4) rotate(15deg);
   color: #62ffed;
+}
+/* Responsive */
+@media (max-width: 768px) {
+  .home-content h1 { font-size: 2.2rem; }
+  .typed-text { font-size: 1.4rem; }
+  .home-buttons .btn { padding: 10px 20px; }
 }

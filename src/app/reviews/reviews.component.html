@@ -1,0 +1,158 @@
+<section class="reviews-section">
+
+  <h2 class="reviews-title">What People Say</h2>
+ <!-- <p class="reviews-subtitle">Real messages from people I’ve worked with.</p>-->
+
+
+
+  <!-- Add Review Button -->
+  <button class="add-review-btn" (click)="showForm = !showForm" *ngIf="!showForm">
+    Add Review
+  </button>
+
+  <!-- Form (unchanged except the char counter you added) -->
+  <div *ngIf="showForm" class="review-form-container glass-card">
+    <form (ngSubmit)="submit()" class="review-form">
+
+      <label class="review-label">Full Name <span class="required">*</span></label>
+      <input
+        type="text"
+        [(ngModel)]="name"
+        name="name"
+        placeholder="John Doe"
+        required
+        class="review-input"
+      />
+
+      <label class="review-label">Email <span class="optional">(optional)</span></label>
+      <input
+        type="email"
+        [(ngModel)]="email"
+        name="email"
+        placeholder="example@email.com"
+        class="review-input"
+      />
+
+      <label class="review-label">Rating <span class="required">*</span></label>
+      <div class="star-rating">
+        <i 
+          class="fa fa-star"
+          *ngFor="let s of [1,2,3,4,5]"
+          [class.active]="s <= rating"
+          required
+          (click)="rating = s"
+        ></i>
+      </div>
+
+      <label class="review-label">Your Message <span class="required">*</span></label>
+      <textarea
+        [(ngModel)]="message"
+        name="message"
+        rows="3"
+        placeholder="Write something meaningful..."
+        required
+        maxlength="500"
+        class="review-textarea"
+      ></textarea>
+
+      <div class="char-count">
+        {{ message?.length || 0 }} / 500
+      </div>
+
+      <button type="submit" [disabled]="sending || !rating || name.length < 6" class="review-btn">
+        {{ sending ? "Sending..." : "Submit Review" }}
+      </button>
+
+    </form>
+  </div>
+
+  <!-- Review List -->
+  <div class="review-list">
+    <div class="review-card" *ngFor="let r of reviews">
+
+  <div class="review-header">
+
+  <div class="left-section">
+  
+  <!-- Avatar -->
+  <div class="review-avatar">{{ r.name[0] }}</div>
+
+  <!-- Text block -->
+  <div class="review-info">
+    
+    <!-- Row: Name + Verified -->
+    <div class="name-row">
+      <h3 class="review-name">{{ r.name }}</h3>
+
+      <span class="verified-badge" *ngIf="r.verified">
+        <i class="fa-solid fa-circle-check"></i> Verified
+      </span>
+    </div>
+
+    <!-- Row: Date + Stars -->
+    <div class="meta-row">
+      <small class="review-date">{{ r.createdAt | date: 'MMM d, y HH:mm' }}</small>
+
+      <div class="review-stars">
+        <i 
+          class="fa fa-star"
+          *ngFor="let s of [1,2,3,4,5]"
+          [class.active]="s <= r.rating"
+        ></i>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+  <!-- RIGHT SIDE ADMIN TOOLBAR -->
+  <div class="admin-toolbar" *ngIf="isAdmin">
+    <button class="admin-btn verify" (click)="toggleVerify(r)" [title]="r.verified ? 'Unverify' : 'Verify'">
+      <i class="fa-solid fa-check-circle"></i>
+    </button>
+
+    <button class="admin-btn delete" (click)="deleteReview(r)" title="Delete review">
+      <i class="fa-solid fa-trash"></i>
+    </button>
+  </div>
+
+</div>
+
+
+  <p class="review-text">{{ r.message }}</p>
+
+  <small *ngIf="r.email" class="review-email">Contact: {{ r.email }}</small>
+
+      <!-- Feedback buttons -->
+      <div class="review-feedback">
+        <button
+          class="feedback-btn"
+          [class.active]="getVote(r) === 'helpful'"
+          (click)="vote(r, 'helpful')"
+          [disabled]="hasVoted(r)"
+          title="Mark this review as helpful"
+        >
+          <i class="fa-regular fa-thumbs-up"></i>
+          Helpful
+          <span class="count">{{ r.helpful || 0 }}</span>
+        </button>
+
+        <button
+          class="feedback-btn negative"
+          [class.active]="getVote(r) === 'unhelpful'"
+          (click)="vote(r, 'unhelpful')"
+          [disabled]="hasVoted(r)"
+          title="Mark this review as unhelpful"
+        >
+          <i class="fa-regular fa-thumbs-down"></i>
+          Unhelpful
+          <span class="count">{{ r.unhelpful || 0 }}</span>
+        </button>
+      </div>
+    </div>
+    
+
+  </div>
+
+</section>

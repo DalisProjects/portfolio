@@ -1,23 +1,46 @@
 <div class="cv-container">
-  <iframe src="assets/MohamedAli_Mhadhbi_CV.pdf"></iframe>
 
+  <!-- Language Switcher -->
+  <div class="lang-buttons">
+    <button class="btn btn-lang en" (click)="switchLanguage('en')">
+      🇺🇸 English
+    </button>
+    <button class="btn btn-lang it" (click)="switchLanguage('it')">
+      🇮🇹 Italiano
+    </button>
+  </div>
+
+  <!-- Embedded PDF using browser's default viewer -->
+  <iframe
+    class="cv-frame"
+    [src]="safeCvUrl"
+  ></iframe>
+
+  <!-- Bottom buttons -->
   <div class="cv-buttons">
+
+    <!-- Download PDF -->
     <a
-      href="assets/MohamedAli_Mhadhbi_CV.pdf"
-      download="MohamedAli_Mhadhbi_CV.pdf"
+      [href]="cvUrl"
+      download
       class="btn btn-primary"
     >
       Download CV
     </a>
 
+    <!-- Open in new tab (mobile / weird browsers will use this) -->
     <a
-      href="assets/MohamedAli_Mhadhbi_CV.pdf"
+      [href]="cvUrl"
       target="_blank"
+      rel="noopener"
       class="btn btn-secondary"
     >
       Open in New Tab
     </a>
-    <a routerLink="/home" class="btn btn-secondary">Back to Home</a>
+
+    <a routerLink="/home" class="btn btn-secondary">
+      Back to Home
+    </a>
 
   </div>
 </div>

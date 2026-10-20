@@ -1,0 +1,423 @@
+/* Section */
+.reviews-section {
+  padding: 0px auto;
+  text-align: center;
+  color: #fff;
+}
+
+/* Title */
+.reviews-title {
+  font-size: 2.2rem;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.reviews-subtitle {
+  font-size: 1rem;
+  opacity: 0.8;
+  margin-bottom: 40px;
+}
+
+/* Add Review Button */
+.add-review-btn {
+  padding: 12px 30px;
+  border-radius: 50px;
+  border: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  background: linear-gradient(135deg, #639cd9, #00c6ff);
+  color: white;
+  cursor: pointer;
+  margin-bottom: 30px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+  transition: 0.3s ease;
+}
+
+.add-review-btn:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.5);
+}
+
+/* Glassmorphic Form Card */
+.glass-card {
+  background: rgba(255,255,255,0.1);
+  padding: 25px;
+  border-radius: 20px;
+  max-width: 650px;
+  margin: 0 auto 50px auto;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+  animation: fadeIn 1s ease;
+}
+
+/* Inputs */
+.review-input,
+.review-textarea {
+  width: 95%;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  background: rgba(255,255,255,0.15);
+  color: #fff;
+  outline: none;
+  backdrop-filter: blur(10px);
+}
+
+.review-input::placeholder,
+.review-textarea::placeholder {
+  color: #ddd;
+}
+
+/* Star Rating */
+.star-rating {
+  padding: auto;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 15px;
+}
+
+.star-rating i {
+  font-size: 28px;
+  color: rgba(255,255,255,0.3);
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+.star-rating i:hover {
+  color: rgba(255,255,255,0.3);
+  color: #dac864;
+  transition: 0.5s ease;
+}
+
+.star-rating i.active {
+  color: #ffd700;
+  transform: scale(1.2);
+}
+
+/* Button */
+.review-btn {
+  width: 100%;
+  padding: 20px;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  color: #fff;
+  background: linear-gradient(135deg, #639cd9, #00c6ff);
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.review-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.4);
+}
+
+/* Review List */
+.review-list {
+  max-width: 900px;
+  margin: 0 auto;
+  display: grid;
+  gap: 20px;
+}
+
+/* Each review card */
+.review-card {
+  background: rgba(255,255,255,0.08);
+  padding: 20px;
+  border-radius: 18px;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  animation: fadeInUp 0.7s ease;
+}
+
+/* Header */
+.review-header {
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  margin-bottom: 5px;
+}
+
+/* Avatar */
+.review-avatar {
+  background: linear-gradient(135deg, #639cd9, #00c6ff);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+  color: #fff;
+}
+
+/* Stars inside review card */
+.review-stars i {
+  padding-top: 8px;
+  padding-bottom: 12px;
+  font-size: 15px;
+  color: rgba(255,255,255,0.3);
+}
+
+.review-stars i.active {
+  color: #ffd700;
+}
+
+/* Review Text */
+.review-text {
+  font-size: 1rem;
+  opacity: 0.9;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* Optional Email */
+.review-email {
+  display: block;
+  margin-top: 10px;
+  font-size: 0.85rem;
+  opacity: 0.7;
+  text-align: right;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+.char-count {
+  text-align: right;
+  font-size: 0.85rem;
+  opacity: 0.8;
+  margin-top: -10px;
+  margin-bottom: 10px;
+  color: #ccc;
+}
+.review-label {
+  display: block;
+  text-align: left;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #eaeaea;
+  opacity: 0.9;
+}
+
+.required {
+  color: #ff6b6b;
+  font-weight: 600;
+}
+
+.optional {
+  font-size: 0.85rem;
+  opacity: 0.7;
+}
+.review-error {
+  background: rgba(255, 80, 80, 0.2);
+  color: #ff6b6b;
+  padding: 12px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  font-size: 0.95rem;
+  border-left: 3px solid #ff6b6b;
+}
+
+.verified-badge {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #1da1f2, #0075ff);
+  color: white;
+  padding: 3px 10px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 50px;
+  margin-left: 8px;
+  box-shadow: 0 3px 10px rgba(29,161,242,0.35);
+  letter-spacing: 0.3px;
+  transform: translateY(-2px); /* slight lift */
+  animation: badgePop 0.3s ease;
+
+}
+
+.verified-badge i {
+  font-size: 0.85rem;
+}
+
+
+
+@keyframes badgePop {
+  0% { transform: scale(0.5) translateY(-2px); opacity: 0; }
+  100% { transform: scale(1) translateY(-2px); opacity: 1; }
+}
+
+/* Hover glow for admin */
+.review-card:hover .verified-badge {
+  box-shadow: 0 5px 15px rgba(29,161,242,0.55);
+}
+.review-feedback {
+  display: flex;
+  gap: 12px;
+  margin-top: 12px;
+  align-items: center;
+}
+
+/* Base button */
+.feedback-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(255,255,255,0.2);
+  background: rgba(255,255,255,0.05);
+  color: #f5f5f5;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.feedback-btn i {
+  font-size: 0.9rem;
+}
+
+.feedback-btn .count {
+  font-weight: 600;
+  opacity: 0.9;
+}
+
+/* Hover */
+.feedback-btn:hover:not(:disabled) {
+  background: rgba(255,255,255,0.15);
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+/* Active (user voted this) */
+.feedback-btn.active {
+  background: rgba(76, 209, 149, 0.15);
+  border-color: #4cd197;
+  color: #4cd197;
+}
+
+.feedback-btn.active .count {
+  color: #4cd197;
+}
+
+/* Negative variant (unhelpful) */
+.feedback-btn.negative.active {
+  background: rgba(255, 107, 107, 0.18);
+  border-color: #ff6b6b;
+  color: #ff6b6b;
+}
+
+/* Disabled after vote */
+.feedback-btn:disabled {
+  opacity: 0.6;
+  cursor: default;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ⭐ Right-side admin toolbar */
+.admin-toolbar {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+/* Buttons with glass effect */
+.admin-btn {
+  background: rgba(255,255,255,0.12);
+  border: 1px solid rgba(255,255,255,0.25);
+  backdrop-filter: blur(6px);
+  color: #fff;
+  width: 34px;
+  height: 34px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.25s ease;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+}
+
+.admin-btn i {
+  font-size: 1rem;
+}
+
+/* Hover animations */
+.admin-btn:hover {
+  transform: translateY(-3px);
+}
+
+/* Color accents */
+.admin-btn.verify:hover {
+  color: #00d084;
+  border-color: #00d084;
+}
+
+.admin-btn.delete:hover {
+  color: #ff5b5b;
+  border-color: #ff5b5b;
+}
+
+/* Keep the header aligned */
+.review-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+
+.review-info {
+  flex: 1;
+}
+/* Keep avatar + text aligned horizontally */
+.left-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+}
+
+/* Make name and badge appear on same row */
+.name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Slightly bigger name */
+.review-name {
+  margin: 0;
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Date + stars row */
+.meta-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 2px;
+}
+
+/* Keep text hugging left side */
+.review-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+}

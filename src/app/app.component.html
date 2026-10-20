@@ -8,6 +8,12 @@
 
 <div class="app-wrapper">
   <app-navbar></app-navbar>
+  <div class="bodypages">
   <router-outlet></router-outlet>
+  <welcome-modal 
+  *ngIf="showWelcome"
+  (closeModal)="closeModal()"
+></welcome-modal>
+  </div>
   <app-footbar></app-footbar>
 </div>

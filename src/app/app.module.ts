@@ -15,7 +15,15 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateLoader, TranslateModule } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { CvComponent } from './cv/cv.component';
-
+import { provideFirebaseApp, initializeApp } from '@angular/fire/app';
+import { provideFirestore, getFirestore } from '@angular/fire/firestore';
+import { environment } from '../environments/environment';
+import { ReviewsComponent } from './reviews/reviews.component';
+import { ReviewspageComponent } from './reviewspage/reviewspage.component';
+import { AnalyticsDashboardComponent } from './analytics-dashboard/analytics-dashboard.component';
+import { WelcomeModalComponent } from './welcome-modal/welcome-modal.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
@@ -29,8 +37,17 @@ export function HttpLoaderFactory(http: HttpClient) {
     NavbarComponent,
     FootbarComponent,
     CvComponent,
+    ReviewsComponent,
+    ReviewspageComponent,
+    AnalyticsDashboardComponent,
+    WelcomeModalComponent,
   ],
   imports: [
+    // REQUIRED FIREBASE INITIALIZATION
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFirestoreModule,
+    provideFirebaseApp(() => initializeApp(environment.firebase)),
+    provideFirestore(() => getFirestore()),
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,

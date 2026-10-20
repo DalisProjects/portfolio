@@ -3,15 +3,15 @@
 
   <div class="home-content">
     <img src="assets/profile.png" alt="Profile" class="popup-img" />
-    <h1>Hi, I'm {{ name }}</h1>
-    
+    <h1 *ngIf="userName">Welcome Back {{userName}}, I'm {{ name }}</h1>
+    <h1 *ngIf="!userName">Welcome, I'm {{ name }}</h1>
     <h2 class="typed-text">{{ currentRole }}</h2>
     <br>
     <br>
     <!-- Buttons -->
     <div class="home-buttons">
       <a routerLink="/projects" routerLinkActive="active" class="btn btn-primary">View My Work</a>
-      <a routerLink="/cv" class="btn btn-primary" >Visualize CV</a>
+      <a routerLink="/cv" class="btn btn-primary" (click)="trackClick('cv')">Visualize CV</a>
       
     </div>
 <!-- Social Media -->
@@ -21,7 +21,87 @@
       <a href="https://www.instagram.com/dalinamh/" target="_blank"><i class="fab fa-instagram fa-2x"></i></a>
       <a href="https://wa.me/+393511587478" target="_blank"><i class="fab fa-whatsapp fa-2x"></i></a>
     </div>
+    <section class="reviews-section">
+ <!-- Review List -->
+  <div class="review-list">
+    <div class="review-card" *ngFor="let r of reviews">
+
+  <div class="review-header">
+
+  <div class="left-section">
+  
+  <!-- Avatar -->
+  <div class="review-avatar">{{ r.name[0] }}</div>
+
+  <!-- Text block -->
+  <div class="review-info">
     
+    <!-- Row: Name + Verified -->
+    <div class="name-row">
+      <h3 class="review-name">{{ r.name }}</h3>
+
+      <span class="verified-badge" *ngIf="r.verified">
+        <i class="fa-solid fa-circle-check"></i> Verified
+      </span>
+    </div>
+
+    <!-- Row: Date + Stars -->
+    <div class="meta-row">
+      <small class="review-date">{{ r.createdAt | date: 'MMM d, y HH:mm' }}</small>
+
+      <div class="review-stars">
+        <i 
+          class="fa fa-star"
+          *ngFor="let s of [1,2,3,4,5]"
+          [class.active]="s <= r.rating"
+        ></i>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+</div>
+
+
+  <p class="review-text">{{ r.message }}</p>
+
+  <small *ngIf="r.email" class="review-email">Contact: {{ r.email }}</small>
+
+      <!-- Feedback buttons -->
+      <div class="review-feedback">
+        <button
+          class="feedback-btn"
+          [class.active]="getVote(r) === 'helpful'"
+          (click)="vote(r, 'helpful')"
+          [disabled]="hasVoted(r)"
+          title="Mark this review as helpful"
+        >
+          <i class="fa-regular fa-thumbs-up"></i>
+          Helpful
+          <span class="count">{{ r.helpful || 0 }}</span>
+        </button>
+
+        <button
+          class="feedback-btn negative"
+          [class.active]="getVote(r) === 'unhelpful'"
+          (click)="vote(r, 'unhelpful')"
+          [disabled]="hasVoted(r)"
+          title="Mark this review as unhelpful"
+        >
+          <i class="fa-regular fa-thumbs-down"></i>
+          Unhelpful
+          <span class="count">{{ r.unhelpful || 0 }}</span>
+        </button>
+      </div>
+    </div>
+    
+
+     <button routerLink="/reviewspage"  class="add-review-btn " >Add Reviews</button>
+
+  </div>
+</section>
+
   </div>
   
 </section>

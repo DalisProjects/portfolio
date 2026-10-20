@@ -119,3 +119,51 @@
     display: flex;
   }
 }
+.admin-icon-btn {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 500;
+  transition: 0.3s ease;
+  border: none;
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  cursor: pointer;
+
+  transition: 0.2s ease;
+}
+
+.admin-icon-btn i {
+  font-size: 1rem;
+}
+
+.admin-icon-btn:hover {
+  background: rgba(255,255,255,0.18);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0,0,0,0.35);
+}
+.view-counter {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: rgba(255,255,255,0.08);
+  border-radius: 50px;
+  color: #fff;
+  font-weight: 500;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+  cursor: default;
+  transition: 0.2s ease;
+}
+
+.view-counter i {
+  color: #62ffed;
+  font-size: 1rem;
+}
+
+.view-counter:hover {
+  background: rgba(255,255,255,0.16);
+  transform: translateY(-2px);
+  
+}

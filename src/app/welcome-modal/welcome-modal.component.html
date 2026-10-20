@@ -1,0 +1,27 @@
+<div class="backdrop-blur"></div>
+
+<div class="modal-pro">
+
+  <div class="avatar-wrapper">
+    <img src="assets/profile.png" class="avatar" />
+  </div>
+
+  <h2 class="title">Welcome to my portfolio!</h2>
+  <p class="subtitle">Glad you're here. Want to personalize your experience?</p>
+
+  <input
+    type="text"
+    placeholder="Enter your name (optional)"
+    [(ngModel)]="userName"
+    class="name-input"
+  />
+   <p><small>Optional: Your name will be used only to personalize your experience on this device.
+It is stored locally in your browser and never sent to any server.
+If you use another browser or device, your name will not appear there.</small></p>
+
+  <div class="actions">
+    <button class="btn skip" (click)="skip()">Skip</button>
+    <button class="btn continue" (click)="save()">Continue</button>
+  </div>
+
+</div>
