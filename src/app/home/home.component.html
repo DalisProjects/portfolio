@@ -3,15 +3,14 @@
 
   <div class="home-content">
     <img src="assets/profile.png" alt="Profile" class="popup-img" />
-    <h1 *ngIf="userName">Welcome Back {{userName}}, I'm {{ name }}</h1>
-    <h1 *ngIf="!userName">Welcome, I'm {{ name }}</h1>
+    <h1>Welcome, I'm {{ name }}</h1>
     <h2 class="typed-text">{{ currentRole }}</h2>
     <br>
     <br>
     <!-- Buttons -->
     <div class="home-buttons">
       <a routerLink="/projects" routerLinkActive="active" class="btn btn-primary">View My Work</a>
-      <a routerLink="/cv" class="btn btn-primary" (click)="trackClick('cv')">Visualize CV</a>
+      <a routerLink="/cv" class="btn btn-primary">Visualize CV</a>
       
     </div>
 <!-- Social Media -->

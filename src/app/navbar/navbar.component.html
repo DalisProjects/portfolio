@@ -2,56 +2,34 @@
   <div class="navbar-container">
     
     <!-- LOGO -->
-    <a class="logo" routerLink="/home" (click)="trackClick('home')">Dali</a>
+    <a class="logo" routerLink="/home">Dali</a>
 
     <!-- DESKTOP NAV -->
     <ul class="nav-links">
       <li>
-        <a routerLink="/home" routerLinkActive="active" 
-           (click)="trackClick('home')">Home</a>
+        <a routerLink="/home" routerLinkActive="active">Home</a>
       </li>
 
       <li>
-        <a routerLink="/about" routerLinkActive="active"
-           (click)="trackClick('about')">About Me</a>
+        <a routerLink="/about" routerLinkActive="active">About Me</a>
       </li>
 
       <li>
-        <a routerLink="/projects" routerLinkActive="active"
-           (click)="trackClick('projects')">Projects</a>
+        <a routerLink="/projects" routerLinkActive="active">Projects</a>
       </li>
 
       <li>
-        <a routerLink="/reviewspage" routerLinkActive="active"
-           (click)="trackClick('reviews')">Reviews</a>
+        <a routerLink="/reviewspage" routerLinkActive="active">Reviews</a>
       </li>
 
       <li>
-        <a routerLink="/contact" routerLinkActive="active"
-           (click)="trackClick('contact')">Contact</a>
+        <a routerLink="/contact" routerLinkActive="active">Contact</a>
       </li>
 
       <li>
-        <a routerLink="/cv" routerLinkActive="active"
-           (click)="trackClick('cv')">CV</a>
+        <a routerLink="/cv" routerLinkActive="active">CV</a>
       </li>
 
-
-      <!-- ⭐ ADMIN ONLY: ANALYTICS DASHBOARD -->
-      <li >
-        <a routerLink="/analytics-dashboard" routerLinkActive="active">
-          Analytics
-        </a>
-      </li>
-
-      <!-- VIEW COUNTER -->
-      <li>
-        <div class="view-counter" title="Unique daily visitors">
-          👁
-          <span *ngIf="loadingViews">...</span>
-          <span *ngIf="!loadingViews">{{ views | number }}</span>
-        </div>
-      </li>
 
       <!-- ADMIN BUTTONS (DESKTOP) -->
       <li>
@@ -86,51 +64,27 @@
   <ul class="mobile-menu" [class.open]="menuOpen">
 
     <li>
-      <a routerLink="/home" routerLinkActive="active" 
-         (click)="trackClick('home'); closeMenu()">Home</a>
+      <a routerLink="/home" routerLinkActive="active" (click)="closeMenu()">Home</a>
     </li>
 
     <li>
-      <a routerLink="/about" routerLinkActive="active"
-         (click)="trackClick('about'); closeMenu()">About Me</a>
+      <a routerLink="/about" routerLinkActive="active" (click)="closeMenu()">About Me</a>
     </li>
 
     <li>
-      <a routerLink="/projects" routerLinkActive="active"
-         (click)="trackClick('projects'); closeMenu()">Projects</a>
+      <a routerLink="/projects" routerLinkActive="active" (click)="closeMenu()">Projects</a>
     </li>
 
     <li>
-      <a routerLink="/reviewspage" routerLinkActive="active"
-         (click)="trackClick('reviews'); closeMenu()">Reviews</a>
+      <a routerLink="/reviewspage" routerLinkActive="active" (click)="closeMenu()">Reviews</a>
     </li>
 
     <li>
-      <a routerLink="/contact" routerLinkActive="active"
-         (click)="trackClick('contact'); closeMenu()">Contact</a>
+      <a routerLink="/contact" routerLinkActive="active" (click)="closeMenu()">Contact</a>
     </li>
 
     <li>
-      <a routerLink="/cv" routerLinkActive="active"
-         (click)="trackClick('cv'); closeMenu()">CV</a>
-    </li>
-
-    <!-- ⭐ ADMIN ONLY: ANALYTICS DASHBOARD -->
-    <li >
-      <a routerLink="/analytics-dashboard" 
-         routerLinkActive="active"
-         (click)="closeMenu()">
-        Analytics
-      </a>
-    </li>
-
-    <!-- VIEW COUNTER MOBILE -->
-    <li>
-      <div class="view-counter" title="Unique daily visitors">
-        👁 
-        <span *ngIf="loadingViews">...</span>
-        <span *ngIf="!loadingViews">{{ views | number }}</span>
-      </div>
+      <a routerLink="/cv" routerLinkActive="active" (click)="closeMenu()">CV</a>
     </li>
 
     <!-- ADMIN (MOBILE) -->

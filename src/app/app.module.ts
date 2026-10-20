@@ -20,8 +20,6 @@ import { provideFirestore, getFirestore } from '@angular/fire/firestore';
 import { environment } from '../environments/environment';
 import { ReviewsComponent } from './reviews/reviews.component';
 import { ReviewspageComponent } from './reviewspage/reviewspage.component';
-import { AnalyticsDashboardComponent } from './analytics-dashboard/analytics-dashboard.component';
-import { WelcomeModalComponent } from './welcome-modal/welcome-modal.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 export function HttpLoaderFactory(http: HttpClient) {
@@ -39,8 +37,6 @@ export function HttpLoaderFactory(http: HttpClient) {
     CvComponent,
     ReviewsComponent,
     ReviewspageComponent,
-    AnalyticsDashboardComponent,
-    WelcomeModalComponent,
   ],
   imports: [
     // REQUIRED FIREBASE INITIALIZATION

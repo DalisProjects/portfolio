@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://dalisprojects.github.io/portfolio/sitemap.xml
