@@ -41,6 +41,8 @@ export class AboutComponent {
     {
       title: 'Junior HCM Technical Consultant',
       company: 'Talentia Software',
+      logo: 'assets/Talentia.png',
+      logoFallback: 'TS',
       location: 'Bari, Italy',
       period: 'Sett 2026 – Present',
       description: 'Configure, customize and support Talentia HCM solutions for client projects, translating HR and payroll requirements into working technical solutions. Handle data analysis, testing and troubleshooting, and work closely with functional consultants and clients.'
@@ -48,6 +50,8 @@ export class AboutComponent {
     {
       title: 'English Teacher - PNRR FUTURA',
       company: 'PNRR Schools Project (Corato, Monopoli, Molfetta)',
+      logo: 'assets/teacher.png',
+      logoFallback: 'PNRR',
       location: 'Bari, Italy',
       period: 'Nov 2024 – May 2025',
       description: 'Delivered engaging English lessons to teachers and students following the Cambridge curriculum, improving communication skills through immersive learning.'
@@ -55,6 +59,8 @@ export class AboutComponent {
     {
       title: 'Full Stack Developer | AngularJS & NodeJS & RestAPIs',
       company: 'AXA NEGOCE',
+      logo: 'assets/angular.png',
+      logoFallback: 'AXA',
       location: 'Tunis, Tunisia (Hybrid)',
       period: 'Dec 1 – Augost 2024',
       description: 'Developed a booking and user management system using Angular, Node.js, and MySQL. Enhanced database stability and optimized loading speed by 30%.'
@@ -62,6 +68,8 @@ export class AboutComponent {
     {
       title: 'Web Developer',
       company: 'Les Andalous Ceniat',
+      logo: 'assets/andalous.jfif',
+      logoFallback: 'LA',
       location: 'Ariana, Tunisia',
       period: 'Nov 2022 – Jun 2023',
       description: 'Created a responsive website for a guesthouse using HTML, CSS, and JavaScript to simplify online booking management.'
@@ -76,13 +84,6 @@ export class AboutComponent {
       details: 'Hands-on training in React, Node.js, MySQL, REST APIs, and version control.',
       logo: "assets/develhope.jpeg"
     },
-    {
-      degree: 'Master’s in Computer Engineering – Cybersecurity & Cloud',
-      institution: 'Politecnico di Bari',
-      period: 'Aug 2024 – Present',
-      details: 'Specializing in software engineering and secure cloud solutions.',
-      logo: "assets/poliba.webp"
-    },
     
     {
       degree: 'Bachelor’s in Business Computing',
@@ -90,14 +91,21 @@ export class AboutComponent {
       period: 'Aug 2021 – Apr 2024',
       details: 'Thesis: Full Stack Web Developer – Angular & Node.js',
       logo: "assets/manar.png"
-    }
+    },
+    {
+      degree: 'Baccalaureate in Economics and Business',
+      institution: 'High School of Sousse',
+      period: 'Aug 2015 – 2020',
+      details: 'Graduated with honors, focusing on economic theory, business management, and financial analysis.',
+      logo: ""
+    },
   ];
 
   languages = [
-    { name: 'English', level: 'C2', color: 'linear-gradient(135deg, #e94a00ff, #e52e71)' },
-    { name: 'French', level: 'C1', color: 'linear-gradient(135deg, #ff8a00, #e52e71)' },
-    { name: 'Italian', level: 'B2', color: 'linear-gradient(135deg, #e9a75cff, #ed5a90ff)' },
-    { name: 'Arabic', level: 'C2', color: 'linear-gradient(135deg, #e94a00ff, #e52e71)' },
+    { name: 'English', level: 'M', color: 'linear-gradient(135deg, #e94a00ff, #e52e71)' },
+    { name: 'French', level: 'C2', color: 'linear-gradient(135deg, #ff8a00, #e52e71)' },
+    { name: 'Italian', level: 'C1', color: 'linear-gradient(135deg, #e9a75cff, #ed5a90ff)' },
+    { name: 'Arabic', level: 'M', color: 'linear-gradient(135deg, #e94a00ff, #e52e71)' },
   ];
 
   volunteering = [
@@ -110,7 +118,7 @@ export class AboutComponent {
     {
       name: 'La Lega del Filo d’Oro',
       role: 'Volunteer',
-      period: 'Sep 2025 – Present',
+      period: 'Sep 2025 – Dec 2025',
       logo: 'assets/lega-del-filo-doro.png'
     }
   ];

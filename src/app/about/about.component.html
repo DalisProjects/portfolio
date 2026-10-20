@@ -14,8 +14,20 @@
       <h2><i class="fas fa-briefcase"></i> Work Experience</h2>
       <div class="cards">
         <div class="card" *ngFor="let job of workExperience">
-          <h3>{{ job.title }}</h3>
-          <h4>{{ job.company }} — <span>{{ job.location }}</span></h4>
+          <div class="experience-header">
+            <div class="experience-logo">
+              <img *ngIf="job.logo; else experienceLogoFallback"
+                   [src]="job.logo"
+                   [alt]="job.company + ' logo'">
+              <ng-template #experienceLogoFallback>
+                <span aria-hidden="true">{{ job.logoFallback }}</span>
+              </ng-template>
+            </div>
+            <div class="experience-details">
+              <h3>{{ job.title }}</h3>
+              <h4>{{ job.company }} — <span>{{ job.location }}</span></h4>
+            </div>
+          </div>
           <p class="date">{{ job.period }}</p>
           <p>{{ job.description }}</p>
         </div>
